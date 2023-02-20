@@ -20,8 +20,13 @@ function subTotalCalculated() {
     setTextElementValueById('sub-total', currentSubTotal);
 
      // calculate tax
-    const taxAmount = currentSubTotal * 0.1;
+    const taxElementString = (currentSubTotal * 0.1).toFixed(2);
+    const taxAmount = parseFloat (taxElementString);
+
     setTextElementValueById('tax-amount', taxAmount);
+
+    const finalAmount = currentSubTotal + taxAmount;
+    setTextElementValueById('total-field', finalAmount)
 
 
 }
